@@ -1,6 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+def person(name, age, *args, **kw):
+    print('name=', name, 'age=', age, 'args=', args, 'kw=', kw)
+args = [1 ,2, 3]
+kw = {'city': 'beijing'}
+person('will', 12)
+person('will', 12, *args)
+person('will', 12, *args, **kw)
+
+#def power(x, n):
+#    s = 1
+#    nn = int(n)
+#    xx = int(x)
+#    while nn > 0:
+#        s = s * xx
+#        nn = nn - 1
+#    return s
+#x = input('请输入基数：')
+#n = input('请输入次方数：')
+#print(power(x, n))
+
 #def SayHello(name):
 #    print('%s你好' % name)
 #    return
