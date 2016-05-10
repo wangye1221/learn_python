@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-def SayHello(name):
-    print('%s你好' % name)
-    return
-name = input('请输入你的名字：')
-SayHello(name)
+#def SayHello(name):
+#    print('%s你好' % name)
+#    return
+#name = input('请输入你的名字：')
+#SayHello(name)
 
 #print(hex(255))
 
-#d = {'wangye':1221}
+#d = {'wangye':fuck you!}
 #UserName = input('请输入用户名：')
 #n = 1
 #error = 1
