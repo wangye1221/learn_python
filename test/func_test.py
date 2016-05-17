@@ -40,6 +40,14 @@
 #    print(x)
 
 #高阶函数
-def add(a, b, f):
-    return f(a) + f(b)
-print(add(4, -4, abs)) #将函数当作参数传入另一个函数中
+#def add(a, b, f):
+#    return f(a) + f(b)
+#print(add(4, -4, abs)) #将函数当作参数传入另一个函数中
+
+#map\reduce函数
+from functools import reduce
+def f(x, y):
+    return x * y
+#L = map(f, [1,2,3])
+J = reduce(f, [1,2,3])
+print(J)
