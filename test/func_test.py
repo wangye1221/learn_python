@@ -45,9 +45,41 @@
 #print(add(4, -4, abs)) #将函数当作参数传入另一个函数中
 
 #map\reduce函数
-from functools import reduce
-def f(x, y):
-    return x * y
-#L = map(f, [1,2,3])
-J = reduce(f, [1,2,3])
-print(J)
+#from functools import reduce
+#def f(x, y):
+#    return x * y
+##L = map(f, [1,2,3])
+#J = reduce(f, [1,2,3])
+#print(J)
+
+#filter函数，用于筛选，返回true\falsh
+#def is_odd(x):
+#    return x % 2 == 1
+#print(list(filter(is_odd, [1,2,3,4,5,6,7])))
+#def not_empty(x):
+#    return x and x.strip()
+#print(list(filter(not_empty, ['1','','2',None,'3','         '])))
+
+def _odd_iter():
+    n = 1
+    while True:
+        n = n +2
+        yield n
+
+def _not_divisible(n):
+    return lambda x: x % n > 0
+
+def primes():
+    yield 2
+    it = _odd_iter()
+    while True:
+        n = next(it)
+        yield n
+        it = filter(_not_divisible(n), it)
+
+for n in primes():
+    if n < 1000:
+        print(n)
+    else:
+        break
+
