@@ -60,26 +60,44 @@
 #    return x and x.strip()
 #print(list(filter(not_empty, ['1','','2',None,'3','         '])))
 
-def _odd_iter():
-    n = 1
-    while True:
-        n = n +2
-        yield n
+#def _odd_iter():
+#    n = 1
+#    while True:
+#        n = n +2
+#        yield n
 
-def _not_divisible(n):
-    return lambda x: x % n > 0
+#def _not_divisible(n):
+#    return lambda x: x % n > 0
 
-def primes():
-    yield 2
-    it = _odd_iter()
-    while True:
-        n = next(it)
-        yield n
-        it = filter(_not_divisible(n), it)
+#def primes():
+#    yield 2
+#    it = _odd_iter()
+#    while True:
+#        n = next(it)
+#        yield n
+#        it = filter(_not_divisible(n), it)
 
-for n in primes():
-    if n < 1000:
-        print(n)
-    else:
-        break
+#for n in primes():
+#    if n < 1000:
+#        print(n)
+#    else:
+#        break
+
+#def is_palindrome(x):
+#    return str(x) == str(x)[::-1] #切片
+#output = filter(is_palindrome, range(1, 1000))
+#print(list(output))
+
+#sorted函数，用于排序，可接收一个key传入的函数作用在每一个值上
+#print(sorted(['bob', 'about', 'Zoo', 'Credit']))
+#print(sorted(['bob', 'about', 'Zoo', 'Credit'], key = str.lower)) #忽略大小写
+#print(sorted(['bob', 'about', 'Zoo', 'Credit'], key = str.lower, reverse = True)) #忽略大小写并倒序
+
+#L = [('Bob', 75), ('Adam', 92), ('Bart', 66), ('Lisa', 88)]
+#def by_name(t):
+#    return t[0]
+#print(sorted(L, key = by_name))
+#def by_score(t):
+#    return t[1]
+#print(sorted(L, key = by_score, reverse = True))
 
