@@ -101,3 +101,69 @@
 #    return t[1]
 #print(sorted(L, key = by_score, reverse = True))
 
+#返回函数
+#def lazy_sum(*args):
+#    def sum():
+#        ax = 0
+#        for n in args:
+#            ax = ax + n
+#        return ax
+#    return sum
+#f = lazy_sum(1,2,3,4,5)
+#print(f())
+
+#def count():
+#    def f(j):
+#        def g():
+#            return j *j
+#        return g
+#    fs = []
+#    for i in range(1, 4):
+#        fs.append(f(i))
+#    return fs
+#f1, f2, f3 = count()
+#print(f1(), f2(), f3())
+
+#匿名函数lambda
+#f = lambda x, y: x + y
+#print(f(1,2))
+
+#装饰器
+#def log(func):
+#    def wrapper(*args, **kw):
+#        print('call %s():' % func.__name__)
+#        return func(*args, **kw)
+#    return wrapper
+#@log
+#def now(month, day):
+#    print('2016-%s-%s' % (month, day))
+#now('05', '19')
+
+#def log(text):
+#    def decorator(func):
+#        def wrapper(*args, **kw):
+#            print('%s %s():' % (text, func.__name__))
+#            return func(*args, **kw)
+#        return wrapper
+#    return decorator
+#@log('execute')
+#def now(month, day):
+#    print('2016-%s-%s' % (month, day))
+#now('05', '19')
+
+#import functools
+#def log(func):
+#    @functools.wraps(func)
+#    def wrapper(*args, **kw):
+#        print('begin call %s():' % func.__name__)
+#        func(*args, **kw)
+#        print('end call %s():' % func.__name__)
+#    return wrapper
+
+#@log
+#def now(month, day):
+#    print('2016-%s-%s' % (month, day))
+#now('05', '19')
+
+#偏函数
+
