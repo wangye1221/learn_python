@@ -78,7 +78,7 @@ class Students(object):
         self._age = age
 
 #wang = Students('wang', 20)
-print(Students('wang', 20))
+#print(Students('wang', 20))
 #wang.age = 20
 #print(wang.age)
 
@@ -112,3 +112,27 @@ class Screen(object):
 #scr.width = 1024
 #scr.height = 768
 #print('分辨率为：%s' % scr.resolution)
+
+#枚举类
+from enum import Enum, unique
+
+@unique
+class Weekday(Enum):
+    Sun = 7
+    Mon = 1
+    Tue = 2
+    Wed = 3
+    Thu = 4
+    Fri = 5
+    Sat = 6
+
+#print(Weekday.Mon)
+#print(Weekday.Mon.value)
+#print(Weekday(7))
+
+#type()动态创建类和元类
+def fn(self, name='world'):
+    print('Hello, %s!' % name)
+Hello = type('Hello', (object,), dict(hello=fn)) #使用type()动态的创建Hello类
+h = Hello()
+h.hello()
