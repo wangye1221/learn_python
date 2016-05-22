@@ -22,4 +22,23 @@ import os
 #print(os.uname())
 #print(os.environ.get('PATH'))
 #print(os.path.abspath('.'))
-print(os.path.split('/home/willwang/test/learn_python/test/io_test.txt'))
+#print(os.path.split('/home/willwang/test/learn_python/test/io_test.txt'))
+
+#json
+
+import json
+'''
+d = dict(name='Bob', age=20, score=88)
+with open('io_test.txt', 'w') as f:
+    json.dump(d, f)
+with open('io_test.txt', 'r') as f:
+    print(json.load(f))
+'''
+
+class Student(object):
+    def __init__(self, name, age, score):
+        self._name = name
+        self._age = age
+        self._score = score
+s = Student('Bob', 20, 100)
+print(json.dumps(s, default=lambda obj: obj.__dict__))
