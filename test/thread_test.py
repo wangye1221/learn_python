@@ -3,9 +3,10 @@
 
 'a test thread and multiprocessing'
 
+import os
+
 __author__ = 'Will Wang'
 
-import os
 print('Process (%s) start...' % os.getpid())
 pid = os.fork()
 if pid == 0:
