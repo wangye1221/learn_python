@@ -1,15 +1,46 @@
 #!/usr/bin/env python3
 # -*-coding: utf-8 -*-
 
-'a test thread and multiprocessing'
+from multiprocessing import Process
+from multiprocessing import Pool
+import os, time, random
+import subprocess
 
-import os
+#def run_proc(name):
+#    print('Run child process %s (%s)...' % (name, os.getpid()))
+    
+#if __name__ == '__main__':
+#    print('Parent process %s.' % os.getpid())
+#    p = Process(target=run_proc, args=('test',))
+#    print('Child process will start.')
+#    p.start()
+#    p.join()
+#    print('Child process end.')
 
-__author__ = 'Will Wang'
+#print('Process (%s) start...' % os.getpid())
+#pid = os.fork()
+#if pid == 0:
+#    print('这是子进程ID%s，父进程ID%s' % (os.getpid(), os.getppid()))
+#else:
+#    print('这是父进程ID%s，子进程ID%s' % (os.getpid(), pid))
 
-print('Process (%s) start...' % os.getpid())
-pid = os.fork()
-if pid == 0:
-    print('这是子进程ID%s，父进程ID%s' % (os.getpid(), os.getppid()))
-else:
-    print('这是父进程ID%s，子进程ID%s' % (os.getpid(), pid))
+#def long_time_task(name):
+#    print('Run task %s (%s)' % (name, os.getpid()))
+#    start = time.time()
+#    time.sleep(random.random() * 3)
+#   end = time.time()
+#   print('Task %s runs %0.2f seconds.' % (name, (end - start)))
+    
+#if __name__ == '__main__':
+#    print('Parent process %s.' % os.getpid())
+#    p = Pool(3)
+#    for i in range(5):
+#        p.apply_async(long_time_task, args=(i,))
+#    print('Waiting for all subprocesses done...')
+#    p.close()
+#    p.join()
+#    print('All subprocesses done.')
+
+print('$ nslookup www.python.org')
+r = subprocess.call(['nslookup', 'www.python.org'])
+print('Exit code:',r)
